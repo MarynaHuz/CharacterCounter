@@ -8,8 +8,9 @@ public class BasicCharCounter implements CharCounter {
         Map<Character, Integer> charsCounted = new LinkedHashMap<>();
 
         for (char character : text.toCharArray()) {
-            charsCounted.put(character, charsCounted.getOrDefault(character, 0) + 1);
+            charsCounted.compute(character, (key, count) -> (count == null) ? 1 : count + 1);
         }
+
         return charsCounted;
     }
 }
