@@ -1,7 +1,6 @@
 package com.javajungle.cache;
 
 import com.javajungle.counter.CharCounter;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -25,9 +24,6 @@ class LRUCacheTest {
         MockitoAnnotations.openMocks(this);
         cache = new LRUCache<>(charCounter, 3);
     }
-
-    @AfterEach
-
 
     @Test
     void get_shouldReturnStoredValue() {
