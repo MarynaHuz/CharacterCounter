@@ -31,7 +31,7 @@ public class CharacterCounterApp {
             System.out.println(formattedCounter);
 
             int capacity = 10; // Set the desired capacity for the LRUCache
-            Cache<String, Map<Character, Integer>> lruCache = new LRUCache<>(basic, capacity);
+            Cache<String, Map<Character, Integer>> lruCache = new LRUCache<>(capacity);
             CharCounter lruCachingDecorator = new CachingCharCounterDecorator(basic, lruCache);
             Map<Character, Integer> lruCachedResult = lruCachingDecorator.count(text);
             String formattedCounterLRU = formatter.apply(lruCachedResult);
